@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,16 +19,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pU0-oa-26T">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pU0-oa-26T">
                                 <rect key="frame" x="16" y="59" width="361" height="759"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4uk-n7-xZK">
+                                <rect key="frame" x="71" y="91" width="251" height="32"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                <segments>
+                                    <segment title="Map"/>
+                                    <segment title="Satelite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" name="AccentColor"/>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pU0-oa-26T" firstAttribute="centerX" secondItem="4uk-n7-xZK" secondAttribute="centerX" id="7pL-Lb-VBO"/>
+                            <constraint firstItem="4uk-n7-xZK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="8R8-Z2-LE8"/>
+                            <constraint firstItem="pU0-oa-26T" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Gac-dn-LxY"/>
+                            <constraint firstItem="4uk-n7-xZK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="71" id="YVn-6x-4em"/>
+                            <constraint firstItem="pU0-oa-26T" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="h0D-5u-jig"/>
+                            <constraint firstItem="pU0-oa-26T" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ljO-P3-TmT"/>
+                            <constraint firstItem="pU0-oa-26T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="t6m-RK-deI"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="mapTypeSegmentedControl" destination="4uk-n7-xZK" id="CWT-zB-Hti"/>
                         <outlet property="mapView" destination="pU0-oa-26T" id="ge1-C6-CJi"/>
                     </connections>
                 </viewController>
@@ -37,8 +57,14 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
