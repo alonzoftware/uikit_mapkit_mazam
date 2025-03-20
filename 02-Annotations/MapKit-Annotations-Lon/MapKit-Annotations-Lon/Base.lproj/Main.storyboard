@@ -20,11 +20,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VR3-GD-lK3">
-                                <rect key="frame" x="16" y="59" width="361" height="759"/>
+                                <rect key="frame" x="16" y="59" width="392" height="759"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Uyt-1b-8Vh">
-                                <rect key="frame" x="83" y="105" width="227" height="32"/>
+                                <rect key="frame" x="83" y="105" width="258" height="32"/>
                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                 <segments>
                                     <segment title="Map"/>
@@ -33,8 +33,24 @@
                                 </segments>
                                 <color key="selectedSegmentTintColor" name="AccentColor"/>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pys-yK-USK">
-                                <rect key="frame" x="126" y="783" width="142" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PIy-if-lRj">
+                                <rect key="frame" x="112" y="711" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="P6p-tP-3d4"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Custom Annotation">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addCustomAnnotationButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="vTq-pI-yQ7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pys-yK-USK">
+                                <rect key="frame" x="141" y="770" width="142" height="35"/>
                                 <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add Annotation">
@@ -48,16 +64,18 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="pys-yK-USK" firstAttribute="centerX" secondItem="Uyt-1b-8Vh" secondAttribute="centerX" id="2w3-JJ-tCY"/>
-                            <constraint firstItem="Uyt-1b-8Vh" firstAttribute="centerX" secondItem="VR3-GD-lK3" secondAttribute="centerX" id="3lc-GW-U7F"/>
-                            <constraint firstItem="pys-yK-USK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="126" id="7um-Dm-ZXR"/>
-                            <constraint firstItem="pys-yK-USK" firstAttribute="bottom" secondItem="VR3-GD-lK3" secondAttribute="bottom" id="BXz-Rb-ecv"/>
-                            <constraint firstItem="VR3-GD-lK3" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Cun-5H-v5Y"/>
-                            <constraint firstItem="Uyt-1b-8Vh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="83" id="NiY-YQ-GfW"/>
-                            <constraint firstItem="Uyt-1b-8Vh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="46" id="eos-l3-pYI"/>
-                            <constraint firstItem="VR3-GD-lK3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kEq-jd-0Zs"/>
-                            <constraint firstItem="VR3-GD-lK3" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="nDH-2O-5J7"/>
-                            <constraint firstItem="VR3-GD-lK3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="v8G-3K-dYi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Uyt-1b-8Vh" secondAttribute="trailing" constant="52" id="6cc-vi-KlL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pys-yK-USK" secondAttribute="bottom" constant="13" id="7OG-R2-tIf"/>
+                            <constraint firstItem="pys-yK-USK" firstAttribute="top" secondItem="PIy-if-lRj" secondAttribute="bottom" constant="19" id="89y-F6-8Zg"/>
+                            <constraint firstItem="PIy-if-lRj" firstAttribute="centerX" secondItem="Uyt-1b-8Vh" secondAttribute="centerX" id="IzS-Yv-Sk0"/>
+                            <constraint firstItem="Uyt-1b-8Vh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="46" id="Jjs-1S-dms"/>
+                            <constraint firstItem="PIy-if-lRj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="112" id="SMT-iC-IWW"/>
+                            <constraint firstItem="VR3-GD-lK3" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="agf-Qn-tHa"/>
+                            <constraint firstItem="PIy-if-lRj" firstAttribute="centerX" secondItem="pys-yK-USK" secondAttribute="centerX" id="cKP-Zj-hXf"/>
+                            <constraint firstItem="VR3-GD-lK3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iV2-Al-79c"/>
+                            <constraint firstItem="VR3-GD-lK3" firstAttribute="centerX" secondItem="Uyt-1b-8Vh" secondAttribute="centerX" id="liA-8i-LXY"/>
+                            <constraint firstItem="Uyt-1b-8Vh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="83" id="m1p-dM-c4m"/>
+                            <constraint firstItem="VR3-GD-lK3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="n87-gC-2qY"/>
                         </constraints>
                     </view>
                     <connections>
@@ -79,6 +97,9 @@
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
